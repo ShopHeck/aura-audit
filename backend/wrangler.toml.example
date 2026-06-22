@@ -1,0 +1,25 @@
+name = "aura-audit-worker"
+main = "src/index.ts"
+compatibility_date = "2026-06-01"
+
+[vars]
+APP_ENV = "development"
+OPENAI_MODEL = "gpt-4.1-mini"
+AI_GATEWAY_URL = "https://gateway.ai.cloudflare.com/v1/YOUR_ACCOUNT_ID/aura-audit/openai"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aura_audit_d1"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[[kv_namespaces]]
+binding = "CONFIG_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[[r2_buckets]]
+binding = "SHARE_CARDS"
+bucket_name = "aura-audit-sharecards-r2"
+
+# Secrets to set with wrangler secret put:
+# OPENAI_API_KEY
+# APP_SHARED_SECRET
